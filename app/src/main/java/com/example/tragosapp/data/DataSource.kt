@@ -10,7 +10,9 @@ import com.example.tragosapp.vo.RetrofitClient
 class DataSource(private val appDatabase: AppDatabase) {
 
     suspend fun getDrinksByName(drinkName: String): Resource<List<Drink>>{
-        return Resource.Success(RetrofitClient.webService.getTragoByName(drinkName))
+        return Resource.Success(
+            RetrofitClient.webService.getTragoByName(drinkName).drinkList
+        )
     }
 
     suspend fun insertDrinkIntoRoom(drinkEntity: DrinkEntity){

@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface WebService {
     @GET("search.php")
     //En Query se agrega el parametro de busqueda de la URL (ej:search.php?s=margarita, en este caso es "s")
-    suspend fun getTragoByName(@Query("s") drinkName: String): List<Drink>
+    suspend fun getTragoByName(@Query("s") drinkName: String): DrinkList
 }

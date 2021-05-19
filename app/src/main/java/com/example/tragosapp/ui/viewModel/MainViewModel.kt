@@ -17,7 +17,7 @@ class MainViewModel(private val repo:Repo):ViewModel(){
     }
 
     init {
-        setDrink("margarita")
+        setDrink("tequila")
     }
 
     val fetchDrinkList = drinkData.distinctUntilChanged().switchMap { drinkName ->
